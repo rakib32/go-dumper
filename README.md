@@ -38,9 +38,19 @@ This a data dump tool which will dump data from one database, then will upload i
         - `kubectl delete jobs --all`
 
 
+### Database Support
+
+| DB Name       | Supported           | 
+| ------------- |:-------------------:|
+| Mysql         | :white_check_mark:  | 
+| Postgres      | :x:            |
+| Sql Server    | :x:            |
+
+
+
 
 ### Notes:
-- *important* please use mysql client 8.0 or higher to avoid time out issues for large datbase
+- **important** please use mysql client 8.0 or higher to avoid time out issues for large datbase
 - used [viper](https://github.com/spf13/viper) to import config from [consul](https://www.consul.io) via [crypt](https://github.com/xordataexchange/crypt/tree/master/bin/crypt).
 - used [logrus](github.com/sirupsen/logrus) to print logs
     - logrus is completely api-compatible with the stdlib logger, so you can replace your `log` imports everywhere with `log "github.com/sirupsen/logrus"`
