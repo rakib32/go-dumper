@@ -1,0 +1,28 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: dumper
+  namespace: dumper
+spec:
+  schedule: "01 15 * * 5"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          volumes:
+          - name: dumper-pv-storage
+            persistentVolumeClaim:
+              claimName: dumper
+          imagePullSecrets:
+          - name: regsecret
+          containers:
+          - name: dumper
+            image: dumper/dumper:1.0.0
+            imagePullPolicy: Always
+            args:
+            - "dump"
+            - "--delete-dump-files=true"
+            volumeMounts:
+              - mountPath: "/backups/raw"
+                name: dumper-pv-storage
+          restartPolicy: Never

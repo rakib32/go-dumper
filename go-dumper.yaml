@@ -1,0 +1,29 @@
+src:
+  database_type: mysql
+  store_type: gs
+  bucket: dbbackup-production
+  region: asia-east1
+  store_path: backups/raw
+  type: "service_account"
+  project_id: "backend-staging-179707"
+  private_key_id: "[user your key]"
+  private_key: "[user your key]"
+  client_email: "user your email from GCP"
+  client_id: "your client id"
+  auth_uri: "https://accounts.google.com/o/oauth2/auth"
+  token_url: "https://accounts.google.com/o/oauth2/token"
+  auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+  certURL: "https://www.googleapis.com/robot/v1/metadata/x509/dbbackup-manager%40backend-staging-179707.iam.gserviceaccount.com"
+  host: localhost
+  port: 3306
+  database: test_rakib
+  username: root
+  password: root1234
+destination:
+  host: localhost
+  port: 3306
+  database: test_rakib_dump
+  username: root
+  password: root1234
+    
+
