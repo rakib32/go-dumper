@@ -1,5 +1,5 @@
 # go-dumper
-This a data dump tool which will dump data from one database, then will upload it to GS or AWS bucket and finally will restore the data to destination server
+It's a data dump tool which will create backup from one database, then will upload it to GCS or AWS bucket and finally will restore the data to destination server
 
 - Creates backup form production database
 - Loads backup sql file to staging database
